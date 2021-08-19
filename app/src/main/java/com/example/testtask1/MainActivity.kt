@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putInt("KEY_ctr", i)
-        outState.putString("ctr_txt",tvCounter?.text.toString())
+        //outState.putString("ctr_txt",tvCounter?.text.toString())
 
         super.onSaveInstanceState(outState)
     }
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
 
-        tvCounter?.text = savedInstanceState?.getString("ctr_txt")
+        tvCounter?.text = savedInstanceState?.getInt("KEY_ctr").toString()
         i=savedInstanceState?.getInt("KEY_ctr")
     }
 
